@@ -1,0 +1,91 @@
+.management-form {
+  display: grid;
+  gap: 20px;
+  max-width: 760px;
+}
+
+.management-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.management-form input,
+.management-form select,
+.management-form textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 12px;
+  color: #263238;
+  background: #fff;
+  border: 1px solid #b8cbc1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.management-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.management-form :is(input, select, textarea):focus-visible {
+  outline: 2px solid #28734f;
+  outline-offset: 2px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.form-actions a {
+  color: #28734f;
+  text-underline-offset: 4px;
+}
+
+.secondary-action {
+  color: #35495e;
+  background: #e1eee7;
+}
+
+.secondary-action:hover {
+  background: #caddd2;
+}
+
+.form-success,
+.form-error {
+  margin: 0;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.form-success {
+  color: #28734f;
+}
+
+.form-error {
+  color: #ab3030;
+}
+
+.management-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

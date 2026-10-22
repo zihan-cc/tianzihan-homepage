@@ -1,0 +1,186 @@
+{
+  "initial": {
+    "profile": {
+      "profile": {
+        "name": "田紫涵",
+        "majorClass": "24计科2班",
+        "direction": "Web前端开发",
+        "introduction": "喜欢通过编程解决实际问题，正在学习Vue 3。",
+        "goal": "完成一个结构清楚、功能完整的个人主页项目。",
+        "email": "tianzihan@example.com",
+        "avatar": "https://tse3-mm.cn.bing.net/th/id/OIP-C.pOBfnFvTEjLAQD8Q9m1rSgHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+      },
+      "skills": [
+        {
+          "id": 1,
+          "name": "HTML",
+          "level": "熟练"
+        },
+        {
+          "id": 2,
+          "name": "CSS",
+          "level": "熟悉"
+        },
+        {
+          "id": 3,
+          "name": "JavaScript",
+          "level": "熟悉"
+        },
+        {
+          "id": 4,
+          "name": "Vue 3",
+          "level": "入门"
+        }
+      ],
+      "interests": [
+        "阅读技术文章",
+        "制作网页",
+        "跑步"
+      ],
+      "keyword": ""
+    },
+    "user": {
+      "currentUser": null
+    },
+    "projects": {
+      "projects": [
+        {
+          "id": 1,
+          "name": "个人主页",
+          "category": "组件化练习",
+          "summary": "使用 Vue 3 组件展示个人资料、学习方向、兴趣爱好与联系方式。",
+          "technologies": [
+            "Vue 3",
+            "JavaScript",
+            "CSS"
+          ],
+          "description": "以实验二的个人主页为基础，将页头、个人资料、技能搜索和页脚拆分为独立组件，通过 props 和自定义事件完成组件通信。实验三进一步使用 Vue Router 将主要栏目拆分为独立页面。",
+          "features": [
+            "个人资料展示与详情展开",
+            "组件间数据传递与事件通信",
+            "响应式布局与顶部路由导航"
+          ],
+          "cover": "images/profile-project.png"
+        },
+        {
+          "id": 2,
+          "name": "技能搜索",
+          "category": "响应式交互练习",
+          "summary": "通过关键词实时筛选技能，展示匹配数量和熟悉程度。",
+          "technologies": [
+            "Vue 3",
+            "computed",
+            "v-model"
+          ],
+          "description": "将现有个人主页中的技能搜索模块作为独立学习作品展示。输入关键词后，通过计算属性实时筛选技能列表，使用 v-model 完成父子组件双向绑定，并在没有匹配结果时显示空状态。",
+          "features": [
+            "不区分大小写的关键词搜索",
+            "实时展示匹配数量与技能熟悉程度",
+            "无匹配结果提示与搜索状态保留"
+          ],
+          "cover": "images/skills-project.png"
+        }
+      ],
+      "lastId": 2
+    },
+    "articles": {
+      "articles": [
+        {
+          "id": 1,
+          "title": "从个人主页开始理解 Vue 组件",
+          "category": "Vue 学习",
+          "author": "田紫涵",
+          "summary": "把个人资料、技能搜索和公共导航拆成组件，让页面结构更清楚，也让功能更容易复用。",
+          "content": "制作个人主页时，我把页头、个人资料、技能搜索和页脚拆成独立组件。每个组件负责一项相对完整的功能，页面只需要负责组合它们。\n\n个人资料通过 props 传入展示组件，技能搜索使用 v-model 绑定关键词，并通过 computed 得到筛选结果。这样既能减少重复代码，也能让数据流向更清楚。\n\n增加首页后，可以复用已有的展示组件，而不必重新实现搜索和资料展示逻辑。组件划分应围绕具体职责展开。",
+          "createdAt": "2026-10-15T00:00:00.000Z",
+          "updatedAt": "2026-10-15T00:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "title": "用动态路由展示不同项目",
+          "category": "路由实践",
+          "author": "田紫涵",
+          "summary": "通过项目编号复用详情页，并为找不到的数据提供明确的返回入口。",
+          "content": "个人主页中的每个项目都拥有独立编号。使用 /projects/:id 动态路由后，不同项目可以共用一个详情组件。\n\n详情组件读取 route.params.id，再从共享数据中查找项目。把查询写在 computed 中，切换编号时即使组件被复用，页面也会更新。\n\n处理详情页还需要考虑不存在的编号、浏览器刷新和返回操作。显示明确的空状态，并提供返回列表的入口，可以避免用户停留在没有内容的页面。",
+          "createdAt": "2026-10-15T01:00:00.000Z",
+          "updatedAt": "2026-10-15T01:00:00.000Z"
+        }
+      ],
+      "lastId": 2
+    }
+  },
+  "observations": [
+    "技能关键词 Vue 跨首页和技能页共享。",
+    "个人资料草稿输入未改变 Store；保存后姓名和网站标题同步更新。",
+    "项目新增 2→3 条，修改保持 3 条，删除恢复 2 条，lastId 保留 3。",
+    "文章新增与修改均调用 saveArticle，删除后 lastId 保留 3。",
+    "刷新后关键词、资料和项目编号恢复，退出后的用户仍为 null。"
+  ],
+  "inspectors": {
+    "profileSearch": "Store\nTimeline\nAbout\nSettings\n🍍 Pinia (root)\nprofile\nuser\nprojects\narticles\nstate\nprofile\n:\nReactive\nskills\n:\nArray[4]\ninterests\n:\nArray[3]\nkeyword\n:\nVue\ngetters\nsiteTitle\n:\n田紫涵的个人主页\nskillCount\n:\n4\nfilteredSkills\n:\nArray[1]",
+    "user": "Store\nTimeline\nAbout\nSettings\n🍍 Pinia (root)\nprofile\nuser\nprojects\narticles\nNo Data",
+    "projects": "Store\nTimeline\nAbout\nSettings\n🍍 Pinia (root)\nprofile\nuser\nprojects\narticles\nstate\nprojects\n:\nArray[3]\nlastId\n:\n3\ngetters\nprojectCount\n:\n3\ncategories\n:\nArray[3]\nfindProjectById\n:\nfunction\n(value)",
+    "articles": "Store\nTimeline\nAbout\nSettings\n🍍 Pinia (root)\nprofile\nuser\nprojects\narticles\nstate\narticles\n:\nArray[3]\nlastId\n:\n3\ngetters\nsortedArticles\n:\nArray[3]\narticleCount\n:\n3\ncategories\n:\nArray[3]\nfindById\n:\nfunction\n(value)"
+  },
+  "timelineSamples": [
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+    "Store\nTimeline\nAbout\nSettings\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:41:03]\n🛫 logout\nstart\n\n[21:41:03]\n🛫 logout\nstart\n\n[21:41:03]\nmutation\nset\n\n[21:41:03]\nmutation\nset\n\n[21:41:03]\n🛬 logout\nend\n\n[21:41:03]\n🛬 logout\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms"
+  ],
+  "timeline": "Store\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms\n\n--- successive viewport samples ---\n\nStore\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms\n\n--- successive viewport samples ---\n\nStore\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms\n\n--- successive viewport samples ---\n\nStore\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms\n\n--- successive viewport samples ---\n\nStore\nTimeline\nAbout\nSettings\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\n🛫 setKeyword\nstart\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\nmutation\nset\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:29]\n🛬 setKeyword\nend\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\n🛫 login\nstart\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\nmutation\nset\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:31]\n🛬 login\nend\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\n🛫 saveProfile\nstart\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\nmutation\nset\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:32]\n🛬 saveProfile\nend\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\n🛫 addProject\nstart\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\nmutation\nset\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:35]\n🛬 addProject\nend\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\n🛫 saveProject\nstart\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\nmutation\nset\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\n[21:40:41]\n🛬 saveProject\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms\n\n--- successive viewport samples ---\n\nStore\nTimeline\nAbout\nSettings\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\n🛫 deleteProject\nstart\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\nmutation\nset\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:47]\n🛬 deleteProject\nend\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\n🛫 saveArticle\nstart\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\nmutation\nset\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:50]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\n🛫 saveArticle\nstart\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\nmutation\nset\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:56]\n🛬 saveArticle\nend\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\n🛫 deleteArticle\nstart\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\nmutation\nset\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:40:59]\n🛬 deleteArticle\nend\n\n[21:41:03]\n🛫 logout\nstart\n\n[21:41:03]\n🛫 logout\nstart\n\n[21:41:03]\nmutation\nset\n\n[21:41:03]\nmutation\nset\n\n[21:41:03]\n🛬 logout\nend\n\n[21:41:03]\n🛬 logout\nend\n\nEvent Info\nstore\n:\n\"profile\"\naction\n:\n\"setKeyword\"\nargs\n:\nArray[1]\nGroup Info\nevents\n:\n6\nduration\n:\n3ms",
+  "actions": [
+    {
+      "store": "profile",
+      "action": "setKeyword",
+      "result": "completed"
+    },
+    {
+      "store": "user",
+      "action": "login",
+      "result": "completed"
+    },
+    {
+      "store": "profile",
+      "action": "saveProfile",
+      "result": "completed"
+    },
+    {
+      "store": "projects",
+      "action": "addProject",
+      "result": "completed"
+    },
+    {
+      "store": "projects",
+      "action": "saveProject",
+      "result": "completed"
+    },
+    {
+      "store": "projects",
+      "action": "deleteProject",
+      "result": "completed"
+    },
+    {
+      "store": "articles",
+      "action": "saveArticle",
+      "result": "completed"
+    },
+    {
+      "store": "articles",
+      "action": "saveArticle",
+      "result": "completed"
+    },
+    {
+      "store": "articles",
+      "action": "deleteArticle",
+      "result": "completed"
+    },
+    {
+      "store": "user",
+      "action": "logout",
+      "result": "completed"
+    }
+  ]
+}
